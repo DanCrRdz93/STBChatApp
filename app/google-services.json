@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "481940658618",
+    "firebase_url": "https://stbchat-10404-default-rtdb.firebaseio.com",
+    "project_id": "stbchat-10404",
+    "storage_bucket": "stbchat-10404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481940658618:android:b4650352bfd533255ca583",
+        "android_client_info": {
+          "package_name": "com.daniel.stbchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481940658618-pn060ld7vca46c0ues6ki8aotvlefnii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU03nxw58ZgCZmYJMA_q4PO5L7cremxUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481940658618-pn060ld7vca46c0ues6ki8aotvlefnii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
