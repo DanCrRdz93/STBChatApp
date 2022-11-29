@@ -12,10 +12,9 @@ import com.daniel.stbchatapp.model.FastChat
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
  */
 class MessageRecyclerViewAdapter(
-    private val user : String,
+    private val user: String,
     private val values: MutableList<FastChat>
 ) : RecyclerView.Adapter<MessageRecyclerViewAdapter.ViewHolder>() {
 
@@ -23,11 +22,9 @@ class MessageRecyclerViewAdapter(
         values.clear()
         values.addAll(newList)
         notifyDataSetChanged()
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         return ViewHolder(
             FragmentMessageBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -35,7 +32,6 @@ class MessageRecyclerViewAdapter(
                 false
             )
         )
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -51,8 +47,6 @@ class MessageRecyclerViewAdapter(
                 )
             )
             holder.mainLayout.gravity = Gravity.END
-
-
         } else {
             holder.layout.setBackgroundColor(
                 getColor(
@@ -72,11 +66,5 @@ class MessageRecyclerViewAdapter(
         val layout = binding.layout
         val idMessage: TextView = binding.tvMessage
         val idUserName: TextView = binding.tvUser
-        //val contentView: TextView = binding.content
-
-//        override fun toString(): String {
-//            return super.toString() + " '" + contentView.text + "'"
-//        }
     }
-
 }

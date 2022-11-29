@@ -14,14 +14,7 @@ import com.daniel.stbchatapp.ui.Adapter.MessageRecyclerViewAdapter
 import com.daniel.stbchatapp.ui.UiState
 import com.daniel.stbchatapp.ui.viewmodel.ChatViewModel
 
-/**
- * A fragment representing a list of Items.
- */
-
-private const val TAG = "MessageFragment"
-
 class MessageFragment : Fragment() {
-
 
     private var _binding: FragmentMessageListBinding? = null
 
@@ -29,23 +22,16 @@ class MessageFragment : Fragment() {
         ViewModelProvider(requireActivity())[ChatViewModel::class.java]
 
     }
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
     private var userName: String? = null
-
     private val manager = LinearLayoutManager(context)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.let {
             userName = it.getString(USER)
         }
     }
-
     lateinit var recyclerViewAdapter: MessageRecyclerViewAdapter
 
     override fun onCreateView(
@@ -53,8 +39,6 @@ class MessageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMessageListBinding.inflate(inflater, container, false)
-
-        // Set the adapter
         recyclerViewAdapter = MessageRecyclerViewAdapter(userName!!, mutableListOf())
         with(binding.list) {
             layoutManager = manager
@@ -78,15 +62,11 @@ class MessageFragment : Fragment() {
                 }
             }
         }
-
         binding.sendButton.setOnClickListener {
-
             val text: String = binding.textInput.text.toString()
             viewModel.writeMessage(text,userName)
             binding.textInput.text.clear()
-
         }
-
         return binding.root
     }
 
@@ -108,11 +88,8 @@ class MessageFragment : Fragment() {
     }
 
     companion object {
-
-        // TODO: Customize parameter argument names
         const val USER = "userId"
-
-        // TODO: Customize parameter initialization
+        private const val TAG = "MessageFragment"
         @JvmStatic
         fun newInstance(user: String) =
             MessageFragment().apply {
