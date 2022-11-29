@@ -1,4 +1,4 @@
-package com.daniel.stbchatapp
+package com.daniel.stbchatapp.ui.Adapter
 
 import android.view.Gravity
 import androidx.recyclerview.widget.RecyclerView
@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
+import com.daniel.stbchatapp.R
 import com.daniel.stbchatapp.databinding.FragmentMessageBinding
+import com.daniel.stbchatapp.model.FastChat
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
@@ -14,10 +16,10 @@ import com.daniel.stbchatapp.databinding.FragmentMessageBinding
  */
 class MessageRecyclerViewAdapter(
     private val user : String,
-    private val values: MutableList<MessageFragment.FastChat>
+    private val values: MutableList<FastChat>
 ) : RecyclerView.Adapter<MessageRecyclerViewAdapter.ViewHolder>() {
 
-    fun updateList(newList: List<MessageFragment.FastChat>) {
+    fun updateList(newList: List<FastChat>) {
         values.clear()
         values.addAll(newList)
         notifyDataSetChanged()
